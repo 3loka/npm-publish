@@ -42,6 +42,7 @@ jobs:
       - name: cleanups in case of rerun
         run: |
           rm -f  package.json
+          rm -f  package-lock.json
           rm -f .gitignore
           rm -f .npmignore
           rm -rf src
@@ -59,6 +60,7 @@ jobs:
       - name: move to root folder
         run: |
           cp .github/repo-files/package.json package.json
+          cp .github/repo-files/package.json package-lock.json
           cp .github/repo-files/.gitignore .gitignore
           cp .github/repo-files/.npmignore .npmignore
           cp -r .github/repo-files/src .
