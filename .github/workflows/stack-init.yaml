@@ -41,11 +41,11 @@ jobs:
           
       - name: cleanups in case of rerun
         run: |
-          rm package.json
-          rm .gitignore
-          rm .npmignore
-          rm -r src
-          rm -r tests
+          rm -f  package.json
+          rm -f .gitignore
+          rm -f .npmignore
+          rm -rf src
+          rm -rf tests
         
       - uses: microsoft/variable-substitution@v1 
         with:
