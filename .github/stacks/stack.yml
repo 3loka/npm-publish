@@ -1,0 +1,43 @@
+version: 0.1.0                                            
+
+name: npm-publish
+description: This stack setsup a repository to publish to npmjs          
+
+branding:                                                # stack branding 
+ icon: 'package'
+ color: 'black'
+
+inputs:                                                  
+  - name: NODE_VERSION                                   
+    default: v12.22.4                                    
+    description: NODE_VERSION for nodejs stack           
+    validvalues:                                         
+    - v12.22.4
+    - v14.17.4
+
+  - name: NPM_TOKEN                                   
+    description: Enter the NPM_TOKEN with access to publish NPM token 
+    is-required: true
+    is-secret: true
+    
+configs:
+  repo-metadata:
+    parameters:
+      description: 'Application to publish to npmjs publish'
+      secrets: 
+        - name: NPM_TOKEN
+          value: ${{inputs.NPM_TOKEN}}
+      topics:
+      - nextjs
+      - npmjs
+
+  environments:
+    - name: development
+      parameters:
+        protected-branches: false
+        allowed-branch-rules:
+          - main
+          - releases/*
+
+init:
+  uses: "stack-init.yaml"
