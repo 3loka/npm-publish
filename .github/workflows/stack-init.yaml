@@ -63,7 +63,6 @@ jobs:
           cp .github/repo-files/.npmignore .npmignore
           cp -r .github/repo-files/src .
           cp -r .github/repo-files/tests .
-          cp .github/repo-files/ci.yaml .github/workflows/ci.yaml
           
       - name: persist NPM version
         run: |
