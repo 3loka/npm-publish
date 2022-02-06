@@ -22,7 +22,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-       - name: checkout
+      - name: checkout
         uses: actions/checkout@v2
         with:
           persist-credentials: false
@@ -43,6 +43,7 @@ jobs:
         run: |
           rm package.json
           rm .gitignore
+          rm .npmignore
           rm -r src
           rm -r tests
         
@@ -59,6 +60,7 @@ jobs:
         run: |
           cp .github/stacks/repo-files/package.json package.json
           cp .github/stacks/repo-files/.gitignore .gitignore
+          cp .github/stacks/repo-files/.npmignore .npmignore
           cp -r .github/stacks/repo-files/src .
           cp -r .github/stacks/repo-files/tests .
           
