@@ -49,7 +49,7 @@ jobs:
         
       - uses: microsoft/variable-substitution@v1 
         with:
-            files: '.github/stacks/repo-files/package.json'
+            files: '.github/repo-files/package.json'
         env:
             name: ${{ github.event.inputs.NPM_PACKAGE_NAME }} 
             description: ${{ github.event.inputs.NPM_PACKAGE_DESCRIPTION }} 
@@ -58,12 +58,12 @@ jobs:
             
       - name: move to root folder
         run: |
-          cp .github/stacks/repo-files/package.json package.json
-          cp .github/stacks/repo-files/.gitignore .gitignore
-          cp .github/stacks/repo-files/.npmignore .npmignore
-          cp -r .github/stacks/repo-files/src .
-          cp -r .github/stacks/repo-files/tests .
-          cp .github/stacks/repo-files/ci.yaml .github/workflows/ci.yaml
+          cp .github/repo-files/package.json package.json
+          cp .github/repo-files/.gitignore .gitignore
+          cp .github/repo-files/.npmignore .npmignore
+          cp -r .github/repo-files/src .
+          cp -r .github/repo-files/tests .
+          cp .github/repo-files/ci.yaml .github/workflows/ci.yaml
           
       - name: persist NPM version
         run: |
