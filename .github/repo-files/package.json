@@ -12,9 +12,9 @@
     "url": "https://github.com/UserName/package-name/issues",
     "email": "your-public-email@example.com"
   },
-  "main": "index.js",
+  "exports": "./src/index.mjs",
   "scripts": {
-    "test": "test.index.js",
+    "test": "node test/index.test.mjs",
     "build": "echo 'TODO'"
   },
   "repository": {
@@ -25,7 +25,6 @@
   "license": "MIT",
   "private": false,
   "engines": {
-    "node": ">=6.0.0"
-  },
-  "engineStrict": true
+    "node": "^12.22 || ^14.13 || >=16"
+  }
 }
